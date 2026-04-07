@@ -15,8 +15,8 @@ set(CMAKE_C_COMPILE_OBJECT
         "<CMAKE_C_COMPILER> -mmcs51 --std c99 --model-small -c <SOURCE> -o <OBJECT>")
 
 set(CMAKE_C_LINK_EXECUTABLE
-        "<CMAKE_C_COMPILER> <OBJECTS> -o <TARGET>.ihx && packihx <TARGET>.ihx > <TARGET>.hex")
+        "<CMAKE_C_COMPILER> <OBJECTS> -o <TARGET>.ihx")
 
-if(DEFINED SDCC_EXTRA_FLAGS)
+if (DEFINED SDCC_EXTRA_FLAGS)
     set(CMAKE_C_FLAGS "${SDCC_EXTRA_FLAGS}")
-endif()
+endif ()

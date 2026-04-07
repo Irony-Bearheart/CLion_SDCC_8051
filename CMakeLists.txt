@@ -8,3 +8,9 @@ add_executable(${PROJECT_NAME}
 target_include_directories(${PROJECT_NAME} PRIVATE inc)
 
 target_compile_options(${PROJECT_NAME} PRIVATE --opt-code-size)
+
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND packihx ${PROJECT_NAME}.ihx > ${PROJECT_NAME}.hex
+        WORKING_DIRECTORY $<TARGET_FILE_DIR:${PROJECT_NAME}>
+        COMMENT "Converting IHX to HEX"
+)
