@@ -1,0 +1,16 @@
+compilers:
+  - description: SDCC for 8051
+    match-compiler-exe: '(.*/)?sdcc(.exe)?'
+    match-sources: '.*\.c'
+    match-language: C
+    code-insight-target-name: mcs51-stack-auto
+    include-dirs:
+      - ${compiler-exe-dir}/../include
+    defines:
+      __SDCC__: ''
+      SDCC: ''
+      __STDC__: '1'
+      __STDC_VERSION__: '201710L'
+      __STDC_HOSTED__: '0'
+      __SIGNED_CHARS__: ''
+      __mcs51: ''
